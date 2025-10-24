@@ -1,0 +1,419 @@
+/* ==========================
+       PALETA (colores bandera)
+       ========================== */
+    :root{
+      --rojo:#D52B1E;
+      --amarillo:#F9D616;
+      --verde:#007934;
+      --fondo:#fffef8;
+      --texto:#222;
+      --card:#ffffff;
+      --muted:#666;
+    }
+
+    /* ==========================
+       RESET + GENERALES
+       ========================== */
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:"Segoe UI", Roboto, Arial, sans-serif;
+      background:var(--fondo);
+      color:var(--texto);
+      line-height:1.55;
+      -webkit-font-smoothing:antialiased;
+    }
+    a{
+      color:inherit;
+      text-decoration:none;
+    }
+    img{
+      max-width:100%;
+      display:block;
+    }
+
+    /* ==========================
+       HEADER + NAV
+       ========================== */
+    header{
+      background:linear-gradient(90deg,var(--rojo),var(--amarillo),var(--verde));
+      color:#fff;
+      padding:20px;
+      text-align:center;
+      box-shadow:0 2px 8px rgba(0,0,0,0.08);
+      position:sticky;
+      top:5;
+      z-index:50;
+    }
+    header h1{
+      margin:0;font-size:1.4rem;
+      letter-spacing:0.6px;
+    }
+    nav{
+     display:flex;
+      justify-content:center;
+      gap:18px;
+      margin-top:12px;
+      flex-wrap:wrap;
+
+    }
+    nav a{
+      background:rgba(255,255,255,0.08);
+      color:#fff;
+      padding:8px 16px;
+      border-radius:8px;
+      font-weight:600;
+      transition:background .18s,transform .12s;
+    }
+    nav a:hover{
+      background:rgba(255,255,255,0.18);
+      transform:translateY(-2px);
+    }
+
+    /* ==========================
+       LAYOUT PRINCIPAL
+       ========================== */
+    main{
+      max-width:1100px;
+      margin:28px auto;
+      padding:0 18px;
+
+    }
+    section{
+      margin-bottom:36px;
+      opacity:0;
+      transform:translateY(8px);
+      transition:opacity .45s,transform .45s;display:none;
+    }
+    section.activo{
+      display:block;
+      opacity:1;
+      transform:none;
+
+  background: #ffffff;
+  border: 1px solid #d4e2d4;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 800px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+}
+    }
+
+    h1{color:var(--rojo);
+      margin-bottom:12px ;
+    }
+    p.lead{color:var(--muted);
+      margin-bottom:18px;
+    }
+
+    /* ==========================
+       ACONTECIMIENTOS (cards)
+       ========================== */
+    .event{
+      background:var(--card);
+      border-left:8px solid var(--rojo);
+      border-radius:12px;
+      padding:16px;
+      box-shadow:0 6px 18px rgba(0,0,0,0.06);
+      margin-bottom:18px;
+      overflow:hidden;
+    }
+    .event h3{margin:0 0 8px 0;font-size:1.05rem}
+    .meta{font-size:0.86rem;color:var(--muted);margin-bottom:10px}
+    .event .thumb{width:100%;height:200px;overflow:hidden;border-radius:8px}
+    .event .thumb img{width:100%;height:100%;object-fit:cover}
+
+    .event-description{
+      max-height:140px;
+      overflow:hidden;
+      transition:max-height .35s ease;
+      margin-top:12px;
+    }
+    .event-description.expandido{max-height:2000px}
+
+    .actions{
+      display:flex;
+      gap:10px;
+      align-items:center;
+      margin-top:12px;
+    }
+    .btn{
+      padding:8px 12px;border-radius:8px;border:0;cursor:pointer;font-weight:600;
+      transition:transform .12s,opacity .12s;
+    }
+    .btn:active{transform:translateY(1px)}
+    .btn-verde{background:var(--verde);color:#fff}
+    .btn-amarillo{background:var(--amarillo);color:#111}
+    .small-muted{font-size:0.86rem;color:var(--muted)}
+
+    /* ==========================
+       CURIOSIDADES (destacado amarillo)
+       ========================== */
+    .curiosidades{
+      background:linear-gradient(180deg,rgba(249,214,22,0.12),rgba(249,214,22,0.06));
+      border-radius:8px;
+      padding:12px;
+      margin-top:12px;
+      color:var(--texto);
+    }
+    .curiosidades h4{margin:0 0 8px 0;color:var(--verde)}
+
+    /* ==========================
+       GALERÍA (mosaico moderno)
+       ========================== */
+    /* --- GALERÍA --- */
+#galeria {
+  padding: 20px;
+  text-align: center;
+}
+
+.gallery-filter {
+  margin-bottom: 15px;
+}
+
+.chip {
+  display: inline-block;
+  padding: 8px 15px;
+  background: #eee;
+  margin: 5px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.chip.active, .chip:hover {
+  background: #28a745;
+  color: white;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+  padding: 10px;
+}
+
+.gallery-item {
+  overflow: hidden;
+  position: relative;
+  border-radius: 8px;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+
+    /* ==========================
+       PREGUNTAS (sets por acontecimiento)
+       ========================== */
+    .set{
+      background:var(--card);
+      border-left:8px solid var(--verde);
+      padding:14px;border-radius:12px;margin-bottom:14px;box-shadow:0 6px 18px rgba(0,0,0,0.05)
+    }
+    .nivel{display:flex;gap:8px;align-items:center;margin-bottom:10px}
+    .nivel b{color:var(--muted)}
+    .question{margin-bottom:12px}
+    .option{
+      background:#f1f1f1;padding:10px;border-radius:8px;margin:6px 0;cursor:pointer;transition:background .14s,transform .08s;
+    }
+    .option:hover{background:#e0e0e0}
+    .option.correct{background:#c8e6c9}
+    .option.wrong{background:#ffcdd2}
+    .next-btn{background:var(--amarillo);border:0;padding:8px 12px;border-radius:8px;font-weight:700;cursor:pointer}
+    .result{font-weight:700;margin-top:10px;color:var(--muted)}
+
+    /* ==========================
+       FOOTER
+       ========================== */
+    footer{background:var(--verde);color:#fff;padding:16px;text-align:center;border-top-left-radius:8px;border-top-right-radius:8px;margin-top:26px}
+    /* ==========================
+       RESPONSIVE tweaks
+       ========================== */
+    @media (min-width:900px){
+      .event{display:flex;gap:18px}
+      .event .content{flex:1}
+      .event .thumb{width:360px;flex:0 0 360px;height:220px}
+      .event-description{margin-top:6px}
+    }
+/* === CURIOSIDADES === */
+#curiosidades {
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #f5f9f6 0%, #e8f5e9 100%);
+  text-align: center;
+}
+
+#curiosidades h2 {
+  font-size: 2rem;
+  color: #1b5e20;
+  margin-bottom: 30px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Contenedor de cada bloque */
+.curio {
+  background: #ffffff;
+  border: 1px solid #d4e2d4;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 800px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+}
+
+/* Animación al pasar el mouse */
+.curio:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+}
+
+/* Título del acontecimiento */
+.curio h3 {
+  color: #2e7d32;
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+/* Lista de curiosidades */
+.curio ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.curio ul li {
+  position: relative;
+  background: #f1f8e9;
+  margin: 10px 0;
+  padding: 10px 15px 10px 35px;
+  border-left: 5px solid #66bb6a;
+  border-radius: 6px;
+  color: #333;
+  line-height: 1.5;
+  transition: background 0.3s;
+}
+
+/* Efecto hover en cada curiosidad */
+.curio ul li:hover {
+  background: #dcedc8;
+}
+
+/* Ícono decorativo tipo viñeta */
+.curio ul li::before {
+  content: "★";
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #81c784;
+  font-size: 1rem;
+}
+
+
+/* Estilos CSS */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #d9534f; /* Color rojizo */
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            color: #5cb85c; /* Color verdoso */
+            border-bottom: 2px solid #5cb85c;
+            padding-bottom: 5px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+
+        .question-block {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        .question-block p {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 3px;
+            transition: background-color 0.2s;
+        }
+
+        label:hover {
+            background-color: #eee;
+        }
+
+        input[type="radio"] {
+            margin-right: 8px;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            margin-top: 30px;
+            background-color: #0275d8; /* Color azul */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #025aa5;
+        }
+
+        #results {
+            margin-top: 40px;
+            padding: 20px;
+            border: 2px solid #d9534f;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 1.2em;
+            font-weight: bold;
+            background-color: #fff0f0;
+            display: none; /* Oculto inicialmente */
+        }
